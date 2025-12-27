@@ -11,8 +11,28 @@ export default function Results() {
     const storedImpact = localStorage.getItem('hiringImpact');
     if (storedImpact) {
       try {
-        setImpact(JSON.parse(storedImpact));
+        const parsed = JSON.parse(storedImpact);
+        
+        // Ensure all numeric fields are actually numbers (backend might send strings for Decimals)
+        const sanitizedImpact = {
+            ...parsed,
+            current_runway_months: Number(parsed.current_runway_months),
+            new_runway_months: Number(parsed.new_runway_months),
+            runway_delta_months: Number(parsed.runway_delta_months),
+            current_monthly_burn: Number(parsed.current_monthly_burn),
+            new_monthly_burn: Number(parsed.new_monthly_burn),
+            burn_delta: Number(parsed.burn_delta),
+            hire_scenario: {
+                ...parsed.hire_scenario,
+                monthly_salary: Number(parsed.hire_scenario.monthly_salary),
+                monthly_benefits: Number(parsed.hire_scenario.monthly_benefits),
+                monthly_overhead: Number(parsed.hire_scenario.monthly_overhead),
+            }
+        };
+
+        setImpact(sanitizedImpact);
       } catch (err) {
+        console.error('Error parsing results:', err);
         setError('Failed to load results. Please start over.');
       }
     } else {
