@@ -128,8 +128,103 @@ axiom/
    - Swagger UI: http://localhost:8000/docs
    - ReDoc: http://localhost:8000/redoc
 
+### Phase 3: Frontend (React) ✅
+
+This phase implements the React frontend with a user-friendly interface.
+
+#### Setup Frontend
+
+1. **Navigate to frontend directory:**
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+   Frontend will be available at `http://localhost:3000`
+
+4. **Make sure backend is running:**
+   ```bash
+   # In project root
+   python run_server.py
+   ```
+
+#### Frontend Features
+
+- **Authentication**: Login/Register pages
+- **Financial Input**: Simple form to enter company finances
+- **Hiring Input**: Form to enter hiring scenario details
+- **Results View**: 
+  - Risk indicator: 🟢 Safe / 🟡 Risky / 🔴 Dangerous
+  - Clear runway impact visualization
+  - Plain language explanations (no finance jargon)
+  - Emphasizes consequences over numbers
+
+#### UX Principles
+
+- ✅ One decision per screen
+- ✅ No finance jargon - uses plain language
+- ✅ Emphasizes consequences, not just numbers
+- ✅ Clear visual risk indicators
+
+## Phase 3: Frontend (React) ✅
+
+This phase implements the React frontend with a user-friendly interface.
+
+### Setup Frontend
+
+1. **Navigate to frontend directory:**
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+   Frontend will be available at `http://localhost:3000`
+
+4. **Make sure backend is running:**
+   ```bash
+   # In project root
+   python run_server.py
+   ```
+
+### Frontend Features
+
+- **Authentication**: Login/Register pages
+- **Financial Input**: Simple form to enter company finances
+- **Hiring Input**: Form to enter hiring scenario details
+- **Results View**: 
+  - Risk indicator: 🟢 Safe / 🟡 Risky / 🔴 Dangerous
+  - Clear runway impact visualization
+  - Plain language explanations (no finance jargon)
+  - Emphasizes consequences over numbers
+
+### UX Principles
+
+- ✅ One decision per screen
+- ✅ No finance jargon - uses plain language
+- ✅ Emphasizes consequences, not just numbers
+- ✅ Clear visual risk indicators
+
 ### Usage
 
 - **Phase 1**: See `examples/usage_examples.py` for detailed examples of the core financial logic.
 - **Phase 2**: Use the API endpoints above to interact with the system programmatically.
+- **Phase 3**: Use the React frontend at `http://localhost:3000` for a user-friendly interface.
+- **Phase 3**: Use the React frontend at `http://localhost:3000` for a user-friendly interface.
 
